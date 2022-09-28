@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
@@ -28,7 +29,7 @@ import { DynamicFormComponent } from './dynamic-form/dynamic-form.component';
     MatNativeDateModule,
     MatInputModule,
     TextMaskModule,
-    
+    MatButtonModule
   ],
   exports: [DynamicFormComponent, DynamicFormBuilderComponent],
 })

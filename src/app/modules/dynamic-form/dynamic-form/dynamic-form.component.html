@@ -6,16 +6,14 @@
         </div>
 
         <div class="section-buttons" *ngIf="!readOnly">
-            <button>
-                <span (click)="resetForm()">
-                    Limpar campos
-                </span>
-            </button>
-            <button (click)="onSubmit()" [disabled]="!form.valid || loading">Salvar indicação</button>
+            <button mat-button color="accent" (click)="resetForm()">Limpar campos</button>
+            <button mat-raised-button color="primary" (click)="onSubmit()"
+                [disabled]="!form.valid || loading">Enviar</button>
         </div>
     </form>
 </div>
 
-<!-- <div *ngIf="payLoad">
-    <strong>Saved the following values</strong><br>{{payLoad}}
-</div> -->
+<div class="preview-data" *ngIf="previewValueData">
+    <strong>Saved the following values:</strong>
+    <code>{{previewValueData}}</code>
+</div>

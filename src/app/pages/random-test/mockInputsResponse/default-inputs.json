@@ -1,30 +1,106 @@
 [
-    {
-        "name": "email",
-        "required": true,
-        "type": "text",
-        "label": "E-mail",
-        "value": "",
-        "mask": "email",
-        "validator": "",
-        "tag": "",
-        "placeholder": "email@example.com",
-        "order": -3,
-        "enabled": true,
-        "size": "large"
-    },
-    {
-        "name": "observation",
-        "required": false,
-        "type": "text",
-        "label": "Observações",
-        "value": "",
-        "mask": "",
-        "validator": "",
-        "tag": "textarea",
-        "placeholder": "Digite",
-        "order": 20,
-        "enabled": true,
-        "size": "large"
-    }
+  {
+    "name": "email",
+    "required": true,
+    "type": "text",
+    "label": "E-mail",
+    "value": "",
+    "mask": "email",
+    "validator": "",
+    "tag": "",
+    "placeholder": "email@example.com",
+    "order": 1,
+    "enabled": true,
+    "size": "large"
+  },
+  {
+    "name": "file",
+    "required": false,
+    "type": "file",
+    "label": "Selecione o arquivo",
+    "value": "",
+    "mask": "",
+    "validator": "",
+    "tag": "",
+    "placeholder": "",
+    "order": 1,
+    "enabled": true,
+    "size": "large"
+  },
+  {
+    "name": "observation",
+    "required": false,
+    "type": "text",
+    "label": "Observações",
+    "value": "",
+    "mask": "",
+    "validator": "",
+    "tag": "textarea",
+    "placeholder": "Digite",
+    "order": 20,
+    "enabled": true,
+    "size": "large"
+  },
+  {
+    "label": "CEP",
+    "name": "cep",
+    "required": true,
+    "tag": "input",
+    "type": "text",
+    "mask": "cep",
+    "order": 3,
+    "enabled": true,
+    "size": "medium",
+    "placeholder": "00000-000",
+    "options": []
+  },
+
+  {
+    "label": "Marque alguma coisa",
+    "name": "isSomething",
+    "required": true,
+    "tag": "input",
+    "type": "radio",
+    "value": true,
+    "order": 8,
+    "enabled": true,
+    "size": "medium",
+    "options": [
+      { "label": "Sim", "value": true },
+      { "label": "Não", "value": false },
+      { "label": "what", "value": 0 }
+    ]
+  },
+
+  {
+    "label": "Selecione",
+    "name": "selectInput",
+    "required": true,
+    "tag": "input",
+    "type": "dropdown",
+    "value": null,
+    "order": 8,
+    "enabled": true,
+    "size": "medium",
+    "options": [
+      { "label": "Sim", "value": true },
+      { "label": "Não", "value": false }
+    ]
+  },
+
+  {
+    "label": "Escolha",
+    "name": "selectCheckbox",
+    "required": false,
+    "tag": "input",
+    "type": "checkbox",
+    "value": null,
+    "order": 8,
+    "enabled": true,
+    "size": "medium",
+    "options": [
+      { "label": "Sim", "value": true },
+      { "label": "Não", "value": false }
+    ]
+  }
 ]

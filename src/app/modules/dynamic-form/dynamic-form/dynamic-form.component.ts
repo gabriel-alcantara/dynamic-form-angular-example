@@ -19,6 +19,7 @@ export class DynamicFormComponent implements OnInit {
 
   form!: UntypedFormGroup;
   payLoad = '';
+  public previewValueData: any;
 
   constructor(private qcs: QuestionControlService, private router: Router) {}
 
@@ -28,11 +29,12 @@ export class DynamicFormComponent implements OnInit {
 
   public onSubmit(): void {
     this.payLoad = this.form.getRawValue();
-    // this.payLoad = JSON.stringify(this.form.getRawValue());
+    this.previewValueData = JSON.stringify(this.form.getRawValue());
     this.payload.emit(this.payLoad);
   }
 
   public resetForm(): void {
+    this.previewValueData = null;
     this.form.reset();
   }
 }

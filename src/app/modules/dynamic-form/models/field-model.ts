@@ -6,7 +6,7 @@ export interface Field {
     type?: any;
     validator?: string;
     mask?: string;
-    value?: string;
+    value?: any;
     order?: number;
     enabled?: boolean;
     size?: string;

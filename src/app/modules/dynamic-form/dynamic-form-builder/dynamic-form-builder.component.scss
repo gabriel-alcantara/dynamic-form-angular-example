@@ -6,7 +6,7 @@
     font-size: 16px;
     line-height: 150%;
     color: #505A66;
-    
+
     h6 {
         font-family: 'Roboto';
         font-style: normal;
@@ -57,11 +57,17 @@
             grid-template-columns: 1fr 1fr 1fr 1fr;
             margin-top: 12px;
             margin-bottom: 16px;
-            
+
             font-size: 16px;
             line-height: 150%;
             letter-spacing: 0.5px;
             color: #50555A;
         }
+    }
+
+    .input-field {
+        display: flex;
+        gap: 16px;
+        flex-direction: column;
     }
 }

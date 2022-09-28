@@ -12,98 +12,13 @@ import { Field } from '../models/field-model';
 
 @Injectable()
 export class QuestionService {
-  // TODO: this is a mocked example about how to build dynamic fields
-  public getQuestions(): any {
-    const questions: QuestionBase<string>[] = [
-      new TextboxQuestion({
-        key: 'cpfTest',
-        label: 'Test input cpf',
-        type: 'cpf',
-        mask: 'cpf',
-        value: '',
-        required: true,
-      }),
-
-      new TextboxQuestion({
-        key: 'emailTest',
-        label: 'Test input email',
-        type: 'email',
-        mask: 'email',
-        value: '',
-      }),
-
-      new TextboxQuestion({
-        key: 'phoneTest',
-        label: 'Test input phone',
-        type: 'phone',
-        mask: 'phone',
-        value: '',
-      }),
-
-      new TextboxQuestion({
-        key: 'nameTest',
-        label: 'Test input name',
-        type: 'name',
-        mask: 'name',
-        value: '',
-      }),
-
-      new TextboxQuestion({
-        key: 'placaVeiculoTest',
-        label: 'Test input placaVeiculo',
-        type: 'placaVeiculo',
-        mask: 'placaVeiculo',
-        value: '',
-      }),
-
-      new TextboxQuestion({
-        key: 'chassiTest',
-        label: 'Test input chassi',
-        type: 'chassi',
-        mask: 'chassi',
-        value: '',
-      }),
-
-      new TextboxQuestion({
-        key: 'yearTest',
-        label: 'Test input year',
-        type: 'year',
-        mask: 'year',
-        value: '',
-      }),
-
-      // new RadioQuestion({
-      //   key: 'radio',
-      //   label: 'Test radio input',
-      //   options: [
-      //     { key: 'solid', value: 'Solid' },
-      //     { key: 'great', value: 'Great' },
-      //     { key: 'good', value: 'Good' },
-      //     { key: 'unproven', value: 'Unproven' },
-      //   ],
-      //   order: 4,
-      // }),
-
-      // new CheckBoxQuestion({
-      //   key: 'checkbox',
-      //   label: 'Test radio input',
-      //   options: [
-      //     { key: 'solid', value: 'Solid' },
-      //     { key: 'great', value: 'Great' },
-      //     { key: 'good', value: 'Good' },
-      //     { key: 'unproven', value: 'Unproven' },
-      //   ],
-      //   order: 5,
-      // }),
-    ];
-
-    return of(questions.sort((a, b) => a.order - b.order));
-  }
 
   public adaptToReturnFields(campos: Field[]): any {
+
     if (campos) {
       const questions: QuestionBase<string>[] = [];
       campos.forEach((element) => {
+        
         if (element.tag === 'label') {
           const tmpQuestion = new LabelQuestion({
             key: element.name,
@@ -164,6 +79,7 @@ export class QuestionService {
                 order: element.order,
                 size: element.size,
                 mask: element.mask,
+                options: this.transformInOptions(element.options),
               });
               questions.push(tmpQuestion);
               break;
@@ -189,7 +105,7 @@ export class QuestionService {
                 placeholder: element.placeholder,
                 label: element.label,
                 required: element.required,
-                // options: this.transformInOptions(element.camposOpcao),
+                options: this.transformInOptions(element.options),
                 order: element.order,
                 size: element.size,
                 mask: element.mask,
@@ -204,7 +120,6 @@ export class QuestionService {
                 placeholder: element.placeholder,
                 label: element.label,
                 required: element.required,
-                // options: this.transformInOptions(element.camposOpcao),
                 order: element.order,
                 size: element.size,
                 mask: element.mask,
@@ -224,7 +139,7 @@ export class QuestionService {
   public transformInOptions(items: any): any {
     const options: any = [];
     items.forEach((element: any) => {
-      options.push({ key: element, value: element });
+      options.push({ key: element.label, value: element.value });
     });
     return options;
   }

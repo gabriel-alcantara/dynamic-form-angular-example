@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { RandomTestComponent } from './pages/random-test/random-test.component';
 import { SharedModule } from './shared/shared.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [AppComponent, RandomTestComponent],
@@ -14,8 +13,7 @@ import { MatButtonModule } from '@angular/material/button';
     SharedModule,
     BrowserModule,
     BrowserAnimationsModule,
-    AppRoutingModule,
-    MatButtonModule
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,12 +1,8 @@
-<h1> Teste dynamic form </h1>
+<div class="random-test">
+    <h1> Test dynamic form </h1>
 
-<button mat-raised-button>Click Me</button>
-<button mat-button color="accent">Accent</button>
-<button mat-button color="warn">Warn</button>
-
-
-<app-dynamic-form
-    *ngIf="showInputs"
-    [questions]="inputList" 
-    (payload)="submit($event)">
-</app-dynamic-form>
+    <div class="content">
+        <app-dynamic-form *ngIf="showInputs" [questions]="inputList" (payload)="submit($event)">
+        </app-dynamic-form>
+    </div>
+</div>
