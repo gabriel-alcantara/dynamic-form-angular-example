@@ -1,0 +1,84 @@
+.box-dynamic-form-builder {
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #505A66;
+    
+    .field {
+        // Reseting inherited effects
+        input[type="text"],
+        input[type="email"],
+        input[type="date"],
+        input[type="number"],
+        input[type="search"],
+        input[type="color"],
+        input[type="file"],
+        input[type="password"],
+        input[type="tel"],
+        input[type="url"] {
+          border: initial;
+          padding: initial;
+        }
+    }
+
+    h6 {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 19px;
+        line-height: 150%;
+        color: #50555A;
+    }
+
+    mat-form-field {
+        width: 100%;
+    }
+
+    .radio-options {
+        display: grid;
+        column-gap: 24px;
+        row-gap: 8px;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        margin-top: 12px;
+        margin-bottom: 16px;
+    }
+
+    mat-label {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 150%;
+        color: #505A66;
+
+        &.strong {
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 140%;
+            color: #50555A;
+        }
+    }
+
+    .checkbox-section {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+
+        .checkbox-options {
+            display: grid;
+            column-gap: 24px;
+            row-gap: 8px;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            margin-top: 12px;
+            margin-bottom: 16px;
+            
+            font-size: 16px;
+            line-height: 150%;
+            letter-spacing: 0.5px;
+            color: #50555A;
+        }
+    }
+}

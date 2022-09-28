@@ -1,0 +1,72 @@
+<div [formGroup]="form" class="box-dynamic-form-builder">
+    <!-- <label [attr.for]="question.key">{{question.label}}</label> -->
+    <!-- <mat-label [attr.for]="question.key">{{question.label}}</mat-label> -->
+
+    <h6 *ngIf="question.tag === 'label'">
+        {{question.value}}
+    </h6>
+
+    <div *ngIf="readOnly && question.tag !== 'label'">
+        <label [attr.for]="question.key">{{question.label}}</label>
+        <input type="text" [value]="question.value ?? '-'" [id]="question.key" [disabled]="true">
+    </div>
+
+    <div *ngIf="!readOnly" [ngSwitch]="question.controlType" class="field">
+        <mat-form-field appearance="outline" *ngSwitchCase="'textbox'">
+            <mat-label [attr.for]="question.key">{{question.label}}</mat-label>
+            <input 
+                *ngIf="question.tag !== 'textarea'"
+                [type]="question.type" 
+                [textMask]="getMask(question.mask)"
+                matInput
+                [formControlName]="question.key" 
+                [id]="question.key"
+                [placeholder]="question.placeholder"
+                [attr.readOnly]="readOnly"
+                [required]="question.required">
+
+            <textarea 
+                *ngIf="question.tag === 'textarea'"
+                matInput 
+                [placeholder]="question.placeholder"
+                [formControlName]="question.key" 
+                [id]="question.key"
+                [required]="question.required">
+            </textarea>
+
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" *ngSwitchCase="'dropdown'">
+            <mat-label [attr.for]="question.key">{{question.label}}</mat-label>
+            <mat-select [formControlName]="question.key" [id]="question.key">
+                <mat-option [value]="opt.key" *ngFor="let opt of question.options">{{ opt.key }}</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-radio-group *ngSwitchCase="'radio'" aria-label="Selecione uma opção" [formControlName]="question.key">
+            <mat-label class="strong" [attr.for]="question.key">{{question.label}}</mat-label>
+
+            <div class="radio-options">
+                <ng-container *ngFor="let opt of question.options">
+                    <mat-radio-button [value]="opt.value">{{ opt.key }}</mat-radio-button>
+                </ng-container>
+            </div>
+        </mat-radio-group>
+
+        <!-- TODO: end logic in accord endpoint model -->
+        <!-- <div *ngSwitchCase="'checkbox'" class="checkbox-section">
+            <mat-label class="strong" [attr.for]="question.key">{{question.label}}</mat-label>
+
+            <div class="checkbox-options">
+                <ng-container *ngFor="let opt of question.options">
+                    <mat-checkbox class="example-margin" [formControlName]="question.key" [value]="opt.key">{{ opt.key
+                        }}</mat-checkbox>
+                </ng-container>
+            </div>
+        </div> -->
+        <!-- <app-file-input [descaminho]="'casoSimples/Doc'" *ngSwitchCase="'file'" [formControlName]="question.key"
+            [id]="question.key"></app-file-input> -->
+    </div>
+
+    <!-- <div class="errorMessage" *ngIf="!isValid">{{question.label}} is required</div> -->
+</div>

@@ -1,0 +1,21 @@
+<div class="box-dynamic-form">
+    <form [formGroup]="form">
+        <div *ngFor="let question of questions" class="item-input" [ngClass]="question?.size">
+            <app-dynamic-form-builder [readOnly]="readOnly" [question]="question" [form]="form">
+            </app-dynamic-form-builder>
+        </div>
+
+        <div class="section-buttons" *ngIf="!readOnly">
+            <button>
+                <span (click)="resetForm()">
+                    Limpar campos
+                </span>
+            </button>
+            <button (click)="onSubmit()" [disabled]="!form.valid || loading">Salvar indicação</button>
+        </div>
+    </form>
+
+    <!-- <div *ngIf="payLoad">
+        <strong>Saved the following values</strong><br>{{payLoad}}
+    </div> -->
+</div>
