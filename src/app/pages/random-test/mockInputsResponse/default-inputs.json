@@ -1,0 +1,30 @@
+[
+    {
+        "name": "email",
+        "required": true,
+        "type": "text",
+        "label": "E-mail",
+        "value": "",
+        "mask": "email",
+        "validator": "",
+        "tag": "",
+        "placeholder": "email@example.com",
+        "order": -3,
+        "enabled": true,
+        "size": "large"
+    },
+    {
+        "name": "observation",
+        "required": false,
+        "type": "text",
+        "label": "Observações",
+        "value": "",
+        "mask": "",
+        "validator": "",
+        "tag": "textarea",
+        "placeholder": "Digite",
+        "order": 20,
+        "enabled": true,
+        "size": "large"
+    }
+]

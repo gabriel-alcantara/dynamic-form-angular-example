@@ -27,7 +27,8 @@ import { DynamicFormComponent } from './dynamic-form/dynamic-form.component';
     MatDatepickerModule,
     MatNativeDateModule,
     MatInputModule,
-    TextMaskModule
+    TextMaskModule,
+    
   ],
   exports: [DynamicFormComponent, DynamicFormBuilderComponent],
 })

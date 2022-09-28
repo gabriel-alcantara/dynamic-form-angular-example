@@ -11,12 +11,9 @@ import { QuestionControlService } from '../services/question-control.service';
   providers: [QuestionControlService],
 })
 export class DynamicFormComponent implements OnInit {
-
-
   @Input() questions: QuestionBase<string>[] | null = [];
   @Input() loading: boolean;
   @Input() readOnly: boolean | false;
-
 
   @Output() payload = new EventEmitter<any>();
 

@@ -7,23 +7,6 @@
     line-height: 150%;
     color: #505A66;
     
-    .field {
-        // Reseting inherited effects
-        input[type="text"],
-        input[type="email"],
-        input[type="date"],
-        input[type="number"],
-        input[type="search"],
-        input[type="color"],
-        input[type="file"],
-        input[type="password"],
-        input[type="tel"],
-        input[type="url"] {
-          border: initial;
-          padding: initial;
-        }
-    }
-
     h6 {
         font-family: 'Roboto';
         font-style: normal;
